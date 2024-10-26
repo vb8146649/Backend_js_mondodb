@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./stylesheets/output.css" rel="stylesheet">
+</head>
+<body class="bg-black">
+    <h1 class="m-3 p-3 text-3xl text-center text-zinc-600 font-bold bg-zinc-800" >Hello <br>
+        now its time for you to pay!!!
+    </h1>
+    <form class="grid" action="/" method="post" >
+        <input type="text" class="w-auto m-3 p-3 text-zinc-600  bg-zinc-800" placeholder="Title" name="title">
+        <input type="text" class="w-auto m-3 p-3 text-zinc-600  bg-zinc-800" placeholder="Description" name="description">
+        <input type="submit" value="submit" class="w-1/6 m-3 p-3 bg-zinc-800">
+    </form>
+    <div class="flex">
+        <% files.forEach((ele)=> {%>
+            <div class="text-white w-3/12 m-3 p-3">
+                <h1 class="text-zinc-600 m-3 p-3"> <%= ele %></h1>
+                <div class="flex justify-between">
+                    <h3 >read more</h3>
+                    <a href=<%=`/edit/${ele}`%>>edit</a>
+                </div>
+            </div>
+        <%}) %>
+    </div>
+</body>
+</html>
